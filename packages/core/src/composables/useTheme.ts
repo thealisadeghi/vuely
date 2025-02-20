@@ -1,4 +1,5 @@
 import { ref, watch } from 'vue';
+import { THEME_STORAGE_KEY } from '../utils/theme-init';
 
 type Theme = 'light' | 'dark';
 
@@ -8,7 +9,8 @@ export function useTheme() {
   const setTheme = (theme: Theme) => {
     currentTheme.value = theme;
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('vuely-theme', theme);
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+    document.cookie = `${THEME_STORAGE_KEY}=${theme};path=/;max-age=31536000`; // 1 year
   };
 
   const toggleTheme = () => {
@@ -18,13 +20,9 @@ export function useTheme() {
 
   // Initialize theme
   const initTheme = () => {
-    const savedTheme = localStorage.getItem('vuely-theme') as Theme | null;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+    const savedTheme = document.documentElement.getAttribute('data-theme') as Theme | null;
     if (savedTheme) {
-      setTheme(savedTheme);
-    } else if (prefersDark) {
-      setTheme('dark');
+      currentTheme.value = savedTheme;
     }
   };
 
@@ -33,7 +31,7 @@ export function useTheme() {
     watch(
       () => window.matchMedia('(prefers-color-scheme: dark)').matches,
       (isDark) => {
-        if (!localStorage.getItem('vuely-theme')) {
+        if (!localStorage.getItem(THEME_STORAGE_KEY)) {
           setTheme(isDark ? 'dark' : 'light');
         }
       }

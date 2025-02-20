@@ -2,10 +2,10 @@
 export type Size = 'small' | 'medium' | 'large';
 
 // Common color types
-export type Color = 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'info';
+export type Color = 'primary' | 'success' | 'warning' | 'danger' | 'purple';
 
 // Button specific types
-export type ButtonType = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'link';
+export type ButtonType = 'default' | 'primary' | 'success' | 'warning' | 'danger' | 'purple';
 
 // Common validation states
 export type ValidationState = 'success' | 'warning' | 'error';

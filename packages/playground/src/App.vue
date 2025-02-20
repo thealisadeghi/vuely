@@ -16,31 +16,43 @@
         <div class="demo-section">
           <div class="demo-row">
             <h3>Types</h3>
+            <v-button type="default">Default</v-button>
             <v-button type="primary">Primary</v-button>
-            <v-button type="secondary">Secondary</v-button>
-            <v-button type="tertiary">Tertiary</v-button>
-            <v-button type="ghost">Ghost</v-button>
-            <v-button type="link">Link</v-button>
+            <v-button type="purple">Purple</v-button>
+            <v-button type="success">Success</v-button>
+            <v-button type="warning">Warning</v-button>
+            <v-button type="danger">Danger</v-button>
           </div>
 
           <div class="demo-row">
             <h3>Sizes</h3>
-            <v-button size="small">Small</v-button>
-            <v-button size="medium">Medium</v-button>
-            <v-button size="large">Large</v-button>
+            <v-button type="primary" size="small">Small</v-button>
+            <v-button type="primary" size="medium">Medium</v-button>
+            <v-button type="primary" size="large">Large</v-button>
+          </div>
+
+          <div class="demo-row">
+            <h3>States</h3>
+            <v-button type="default">Default</v-button>
+            <v-button type="default" disabled>Disabled</v-button>
+            <v-button type="primary">Primary</v-button>
+            <v-button type="primary" disabled>Disabled</v-button>
+            <v-button type="primary" :loading="isLoading" @click="handleLoadingClick">
+              {{ isLoading ? 'Loading...' : 'Click to Load' }}
+            </v-button>
           </div>
 
           <div class="demo-row">
             <h3>With Icons</h3>
-            <v-button>
+            <v-button type="primary">
               <template #icon>👋</template>
               Left Icon
             </v-button>
-            <v-button>
+            <v-button type="success">
               Right Icon
               <template #icon-right>👉</template>
             </v-button>
-            <v-button type="secondary">
+            <v-button type="warning">
               <template #icon>⭐</template>
               Both Icons
               <template #icon-right>⭐</template>
@@ -48,20 +60,11 @@
           </div>
 
           <div class="demo-row">
-            <h3>States</h3>
-            <v-button disabled>Disabled</v-button>
-            <v-button :loading="isLoading" @click="handleLoadingClick">
-              {{ isLoading ? 'Loading...' : 'Click to Load' }}
-            </v-button>
-            <v-button loading loadingText="Processing...">Processing</v-button>
-          </div>
-
-          <div class="demo-row">
             <h3>Variants</h3>
-            <v-button rounded>Rounded</v-button>
-            <v-button type="secondary" rounded>Rounded</v-button>
+            <v-button type="primary" rounded>Rounded</v-button>
+            <v-button type="success" rounded>Rounded</v-button>
             <div class="demo-block">
-              <v-button block>Block Button</v-button>
+              <v-button type="primary" block>Block Button</v-button>
             </div>
           </div>
         </div>

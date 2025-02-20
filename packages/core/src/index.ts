@@ -1,12 +1,14 @@
-// Styles
+// Base styles must be imported first
 import './styles/base.css';
-import './styles/tokens.css';
+
+// Theme initialization
+import './utils/theme-init';
 
 // Components
 export * from './components';
 
 // Composables
-export * from './composables';
+export { useTheme } from './composables/useTheme';
 
 // Types
 export * from './types';
@@ -22,8 +24,5 @@ export function install(app: App) {
   }
 }
 
-// Create plugin
-export const plugin = { install };
-
-// Export everything as named exports
-export { plugin as default }; 
+// Default export
+export default { install }; 
