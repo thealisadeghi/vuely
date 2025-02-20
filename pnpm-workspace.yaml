@@ -1,0 +1,7 @@
+packages:
+  # Core library package
+  - 'packages/core'
+  # Documentation site
+  - 'packages/docs'
+  # Example/playground app
+  - 'packages/playground' 

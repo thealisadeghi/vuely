@@ -1,0 +1,21 @@
+{
+  "name": "vuely",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A minimal and flexible UI library for Vue and Nuxt",
+  "scripts": {
+    "dev": "pnpm --filter @vuely/core build && pnpm --parallel --filter \"@vuely/playground\" --filter \"@vuely/core\" dev",
+    "build": "pnpm --filter @vuely/core build && pnpm --filter @vuely/core build:types && pnpm --filter @vuely/playground build",
+    "type-check": "pnpm --filter @vuely/core type-check",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint"
+  },
+  "keywords": [
+    "vue",
+    "nuxt",
+    "ui-library",
+    "components"
+  ],
+  "author": "",
+  "license": "MIT"
+} 
