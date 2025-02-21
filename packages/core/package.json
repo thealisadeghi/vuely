@@ -17,7 +17,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite build --watch",
+    "dev": "npx concurrently \"vite build --watch\" \"vue-tsc --declaration --emitDeclarationOnly --outDir dist/types --watch\"",
     "build": "vite build && pnpm build:types",
     "build:types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist/types",
     "type-check": "vue-tsc --noEmit",
