@@ -1,6 +1,7 @@
 {
-  "name": "@vuely/core",
+  "name": "vuely",
   "version": "0.0.1",
+  "description": "A minimal and flexible UI library for Vue and Nuxt",
   "type": "module",
   "main": "./dist/vuely.umd.js",
   "module": "./dist/vuely.es.js",
@@ -22,10 +23,32 @@
     "build:types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist/types",
     "type-check": "vue-tsc --noEmit",
     "test": "vitest",
-    "lint": "eslint src --ext .ts,.vue"
+    "lint": "eslint src --ext .ts,.vue",
+    "prepublishOnly": "pnpm build"
   },
   "peerDependencies": {
     "vue": "^3.3.0"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "ui",
+    "components",
+    "ui-library",
+    "vuely"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/vuely.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/vuely/issues"
+  },
+  "homepage": "https://github.com/yourusername/vuely#readme",
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
