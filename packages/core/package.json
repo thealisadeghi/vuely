@@ -37,16 +37,16 @@
     "ui-library",
     "vuely"
   ],
-  "author": "Your Name",
+  "author": "AliSadeghi",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/vuely.git"
+    "url": "git+https://github.com/thealisadeghi/vuely.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/vuely/issues"
+    "url": "https://github.com/thealisadeghi/vuely/issues"
   },
-  "homepage": "https://github.com/yourusername/vuely#readme",
+  "homepage": "https://github.com/thealisadeghi/vuely#readme",
   "publishConfig": {
     "access": "public"
   },
