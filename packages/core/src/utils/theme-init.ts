@@ -1,5 +1,5 @@
-const THEME_STORAGE_KEY = 'vuely-theme';
-const INITIALIZED_ATTR = 'data-vuely-initialized';
+const THEME_STORAGE_KEY = "vuely-theme";
+const INITIALIZED_ATTR = "data-vuely-initialized";
 
 // Generate the initialization script content
 const generateInitScript = () => `
@@ -52,7 +52,7 @@ const generateInitScript = () => `
 
 // Create a script tag with the initialization code
 const createInitScript = () => {
-  const script = document.createElement('script');
+  const script = document.createElement("script");
   script.textContent = generateInitScript();
   return script;
 };
@@ -70,21 +70,21 @@ const injectInitScript = () => {
         obs.disconnect();
       }
     });
-    
+
     observer.observe(document.documentElement, {
       childList: true,
-      subtree: true
+      subtree: true,
     });
   }
 };
 
 // Execute initialization
-if (typeof window !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', injectInitScript);
+if (typeof window !== "undefined") {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", injectInitScript);
   } else {
     injectInitScript();
   }
 }
 
-export { THEME_STORAGE_KEY }; 
+export { THEME_STORAGE_KEY };

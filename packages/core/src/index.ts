@@ -1,21 +1,21 @@
 // Base styles must be imported first
-import './styles/base.css';
+import "./styles/base.css";
 
 // Theme initialization
-import './utils/theme-init';
+import "./utils/theme-init";
 
 // Components
-export * from './components';
+export * from "./components";
 
 // Composables
-export { useTheme } from './composables/useTheme';
+export * from "./composables";
 
 // Types
-export * from './types';
+export * from "./types";
 
 // Install function
-import { App } from 'vue';
-import * as components from './components';
+import type { App } from "vue";
+import * as components from "./components";
 
 export function install(app: App) {
   for (const key in components) {
@@ -25,4 +25,4 @@ export function install(app: App) {
 }
 
 // Default export
-export default { install }; 
+export default { install };

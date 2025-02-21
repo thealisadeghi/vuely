@@ -4,12 +4,12 @@
   "type": "module",
   "main": "./dist/vuely.umd.js",
   "module": "./dist/vuely.es.js",
-  "types": "./dist/types/index.d.ts",
+  "types": "./dist/types/vuely.d.ts",
   "exports": {
     ".": {
       "import": "./dist/vuely.es.js",
       "require": "./dist/vuely.umd.js",
-      "types": "./dist/types/index.d.ts"
+      "types": "./dist/types/vuely.d.ts"
     },
     "./style.css": "./dist/vuely.css"
   },
